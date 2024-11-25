@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.typekit.net/zyx4fud.css">	
+<title>Create a Monster</title>
+<style>
+	
+body{
+	margin:0;
+	background-color:  #FE852A;
+	text-align-last: center;
+	}
+wrapper {
+    width: 670px;
+    height: 680px;
+    display: block;
+    margin: auto;
+}
+footer {
+    font-size: 12px;
+    padding: 8px 0;
+}
+div {
+	display:inline-block;
+	margin:10px;
+	box-sizing:border-box;
+	}
+#div1 {
+    background-image: url("monsterface.png");
+	background-size: contain;
+    background-repeat: no-repeat;
+    height: 660px;
+    width: 500px;
+    float: left;
+}
+#div2, #div3, #div4 {
+    width: 125px;
+    height: 150px;
+}
+#div2 img, #div3 img, #div4 img {
+    width: 100%;
+    height: auto;
+}
+	
+#div1 #drag1 {
+    padding-top:200px;
+    padding-bottom: 200px;
+    padding-left: 120px;
+    padding-right: 400px;
+}
+#div1 #drag2 {
+    padding-top:200px;
+    padding-bottom: 200px;
+    padding-left: 130px;
+    padding-right: 400px;
+}
+	#div1 #drag3 {
+    padding-top:200px;
+    padding-bottom: 200px;
+    padding-left: 150px;
+    padding-right: 400px;
+}
+h1 {
+ font-family: "cc-thismanthismonster-var", sans-serif;
+		font-variation-settings: "CHEW" 9;
+    margin: 8px 0 0;
+    font-size: 48px;
+}
+
+</style>
+
+	<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<h1>Give the Monster a Face</h1>
+<wrapper>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+	
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="face_1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="250" height="300"></div>
+	
+  <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"> <img src="face_2.png" draggable="true" ondragstart="drag(event)" id="drag2" width="250" height="300"> </div>
+	
+  <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="face_3.png" draggable="true" ondragstart="drag(event)" id="drag3" width="185" height="280"></div>
+	
+</wrapper>
+	<footer> © 2024, Kayla Valdez. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</footer>
+</body>
+</html>
